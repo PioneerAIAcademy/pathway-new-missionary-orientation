@@ -1,0 +1,5 @@
+playwright
+markdownify
+aiohttp
+pyyaml
+beautifulsoup4
