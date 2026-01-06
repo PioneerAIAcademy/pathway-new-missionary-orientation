@@ -3,3 +3,5 @@ markdownify
 aiohttp
 pyyaml
 beautifulsoup4
+python-dotenv
+openai

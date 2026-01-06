@@ -9,7 +9,7 @@ from playwright._impl._errors import TimeoutError as PlaywrightTimeoutError
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class Rise360Crawler:
-    def __init__(self, course_url: str, output_dir: str = "output", headless: bool = False):
+    def __init__(self, course_url: str, output_dir: str = "docs/output", headless: bool = False):
         self.course_url = course_url
         self.output_dir = output_dir
         self.headless = headless

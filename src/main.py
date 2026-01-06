@@ -21,7 +21,7 @@ async def main():
     parser = argparse.ArgumentParser(description="Crawl a Rise360 course and convert it to Markdown.")
     parser.add_argument(
         "--output-dir",
-        default="output",
+        default="docs/output",
         help="The directory to save the output files.",
     )
     args = parser.parse_args()
