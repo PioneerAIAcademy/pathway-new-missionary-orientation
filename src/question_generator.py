@@ -40,58 +40,58 @@ COURSE_STRUCTURE = {
             "module_number": 1,
             "module_title": "Access to Essential Systems",
             "lessons": [
-                {"title": "Access to a Zoom Account", "file": "01_Access_to_a_Zoom_Account.md"},
-                {"title": "Access the Student Information System", "file": "02_Access_the_Student_Information_System.md"},
-                {"title": "Access to Resources and Ongoing Training Material", "file": "03_Access_to_Resources_and_Ongoing_Training_Material.md"}
+                {"title": "Access to a Zoom Account", "file": "01_Access to a Zoom Account.md"},
+                {"title": "Access the Student Information System", "file": "02_Access the Student Information System.md"},
+                {"title": "Access to Resources and Ongoing Training Material", "file": "03_Access to Resources and Ongoing Training Material.md"}
             ]
         },
         {
             "module_number": 2,
             "module_title": "Zoom for Virtual Gatherings",
             "lessons": [
-                {"title": "Basic Zoom Skills for Your First Gathering", "file": "01_Basic_Zoom_Skills_for_Your_First_Gathering.md"},
-                {"title": "Download and Install the Zoom App", "file": "02_Download_and_Install_the_Zoom_App.md"},
-                {"title": "How to Open Your Zoom Room", "file": "03_How_to_Open_Your_Zoom_Room.md"},
-                {"title": "Learn Your Zoom Room Tools", "file": "04_Learn_Your_Zoom_Room_Tools.md"},
-                {"title": "How to Update Your Personal Profile", "file": "05_How_to_Update_Your_Personal_Profile.md"},
-                {"title": "How to Share Your Screen in Zoom", "file": "06_How_to_Share_Your_Screen_in_Zoom.md"},
-                {"title": "Share Your Zoom Room Link", "file": "07_Share_Your_Zoom_Room_Link.md"}
+                {"title": "Basic Zoom Skills for Your First Gathering", "file": "01_Basic Zoom Skills for Your First Gathering.md"},
+                {"title": "Download and Install the Zoom App", "file": "02_Download and Install the Zoom App.md"},
+                {"title": "How to Open Your Zoom Room", "file": "03_How to Open Your Zoom Room.md"},
+                {"title": "Learn Your Zoom Room Tools", "file": "04_Learn Your Zoom Room Tools.md"},
+                {"title": "How to Update Your Personal Profile", "file": "05_How to Update Your Personal Profile.md"},
+                {"title": "How to Share Your Screen in Zoom", "file": "06_How to Share Your Screen in Zoom.md"},
+                {"title": "Share Your Zoom Room Link", "file": "07_Share Your Zoom Room Link.md"}
             ]
         },
         {
             "module_number": 3,
             "module_title": "Contacting Your Students",
             "lessons": [
-                {"title": "Who Are Your Students?", "file": "01_Who_Are_Your_Students_.md"},
-                {"title": "Contact Your Students", "file": "02_Contact_Your_Students.md"},
-                {"title": "Send an Email Message or Group Chat", "file": "03_Send_an_Email_Message_or_Group_Chat.md"},
-                {"title": "New Student Visits", "file": "04_New_Student_Visits.md"}
+                {"title": "Who Are Your Students?", "file": "01_Who Are Your Students_.md"},
+                {"title": "Contact Your Students", "file": "02_Contact Your Students.md"},
+                {"title": "Send an Email Message or Group Chat", "file": "03_Send an Email Message or Group Chat.md"},
+                {"title": "New Student Visits", "file": "04_New Student Visits.md"}
             ]
         },
         {
             "module_number": 4,
             "module_title": "Your First Gathering",
             "lessons": [
-                {"title": "Your Role in the First Gathering", "file": "01_Your_Role_in_the_First_Gathering.md"},
-                {"title": "Lead and Observing Students", "file": "02_Lead_and_Observing_Students.md"},
-                {"title": "Former PathwayConnect Completer", "file": "03_Former_PathwayConnect_Completer.md"}
+                {"title": "Your Role in the First Gathering", "file": "01_Your Role in the First Gathering.md"},
+                {"title": "Lead and Observing Students", "file": "02_Lead and Observing Students.md"},
+                {"title": "Former PathwayConnect Completer", "file": "03_Former PathwayConnect Completer.md"}
             ]
         },
         {
             "module_number": 5,
             "module_title": "Learning More About the Student Information System",
             "lessons": [
-                {"title": "My Gatherings Portal and Student Information", "file": "01_My_Gatherings_Portal_and_Student_Information.md"},
-                {"title": "Monitor Student Progress", "file": "02_Monitor_Student_Progress.md"},
-                {"title": "Create Gathering Meeting Outlines", "file": "03_Create_Gathering_Meeting_Outlines.md"}
+                {"title": "My Gatherings Portal and Student Information", "file": "01_My Gatherings Portal and Student Information.md"},
+                {"title": "Monitor Student Progress", "file": "02_Monitor Student Progress.md"},
+                {"title": "Create Gathering Meeting Outlines", "file": "03_Create Gathering Meeting Outlines.md"}
             ]
         },
         {
             "module_number": 6,
             "module_title": "Next Steps in Your Orientation Training",
             "lessons": [
-                {"title": "Missionary Training and Resources", "file": "01_Missionary_Training_and_Resources.md"},
-                {"title": "Your Orientation Trainer and Additional Training Resources", "file": "02_Your_Orientation_Trainer_and_Additional_Training_Resources.md"}
+                {"title": "Missionary Training and Resources", "file": "01_Missionary Training and Resources.md"},
+                {"title": "Your Orientation Trainer and Additional Training Resources", "file": "02_Your Orientation Trainer and Additional Training Resources.md"}
             ]
         }
     ]
