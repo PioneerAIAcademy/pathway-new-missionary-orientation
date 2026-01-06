@@ -1,0 +1,588 @@
+course_title: New Missionary Orientation for BYU-Pathway
+total_pages: 23
+total_questions: 63
+pages:
+- page_number: 1
+  page_title: Introduction to Serving with BYU-Pathway Worldwide
+  module_context: Introduction
+  page_file: 01_Introduction.md
+  questions: []
+- page_number: 2
+  page_title: Access to a Zoom Account
+  module_context: 'Module 1: Access to Essential Systems'
+  page_file: Module_01_Access to Essential Systems/01_Access to a Zoom Account.md
+  questions:
+  - question: What are the six missionary responsibilities you should focus on to
+      help your students grow academically and spiritually?
+    answer: 'The six missionary responsibilities are: 1) Inviting others to come unto
+      Christ, 2) Ministering to and shepherding your students, 3) Making your gathering
+      a sacred place, 4) Finding potential students within your community, 5) Guiding
+      students in their educational goals, and 6) Supporting other missionaries with
+      whom you associate.'
+    type: comprehension
+    key_concept: Understanding of missionary responsibilities
+  - question: How will you gain access to your BYU-Pathway Zoom account and other
+      essential systems to begin your missionary training?
+    answer: You will be contacted by a missionary orientation trainer who will provide
+      you with access to your BYU-Pathway Zoom account, your student roster in the
+      My Gatherings system, and the Missionary Services website.
+    type: application
+    key_concept: Procedure for gaining access to essential systems
+  - question: Why is it important to have a sense of calling and willingness to assume
+      responsibility for your own learning as a missionary?
+    answer: Having a sense of calling ensures that missionaries are motivated to bless
+      students' lives, and being willing to assume responsibility for their own learning
+      and growth allows them to effectively develop their skills and fulfill their
+      missionary responsibilities.
+    type: comprehension
+    key_concept: Importance of self-directed learning and calling in missionary work
+- page_number: 3
+  page_title: Access the Student Information System
+  module_context: 'Module 1: Access to Essential Systems'
+  page_file: Module_01_Access to Essential Systems/02_Access the Student Information
+    System.md
+  questions:
+  - question: What steps must you follow to activate your new BYU-Pathway Zoom account?
+    answer: To activate your new BYU-Pathway Zoom account, first check your email
+      for an activation message from no-reply@zoom.us. Click the 'Activate Your Zoom
+      Account' button, choose the sign-up method 'Sign Up with a Password', enter
+      your name and password, then click 'Continue'. Once completed, you will receive
+      your personal meeting URL.
+    type: application
+    key_concept: Account activation process
+  - question: If you have a paid Zoom account, what must you do to use a BYU-Pathway
+      Zoom account?
+    answer: If you have a paid Zoom account, you cannot upgrade it. Instead, you need
+      to create a new Zoom account through BYU-Pathway. Provide your trainer with
+      an email address to set up the new account.
+    type: comprehension
+    key_concept: Understanding account requirements
+  - question: Why is it important to not create a personal Zoom account while serving
+      as a missionary with BYU-Pathway?
+    answer: It is important not to create a personal Zoom account because all Zoom
+      accounts used for facilitating gatherings must be assigned by BYU-Pathway. Using
+      the provided account ensures compliance with organizational policies and allows
+      access to necessary features for your role.
+    type: comprehension
+    key_concept: Importance of using assigned accounts
+- page_number: 4
+  page_title: Access to Resources and Ongoing Training Material
+  module_context: 'Module 1: Access to Essential Systems'
+  page_file: Module_01_Access to Essential Systems/03_Access to Resources and Ongoing
+    Training Material.md
+  questions:
+  - question: What is the purpose of the My Gatherings portal, and how do you initially
+      access it?
+    answer: The My Gatherings portal is where missionaries can access student information.
+      To initially access it, you must follow the instructions in the email you receive,
+      which includes using a one-time link and entering an invitation code provided
+      in that email.
+    type: comprehension
+    key_concept: Understanding the purpose and initial access procedures of the My
+      Gatherings portal
+  - question: Describe the steps you need to take if you did not receive the email
+      with the login link and invitation code?
+    answer: If you did not receive the email, you should contact your trainer, who
+      will provide you with the necessary link and invitation code for logging into
+      the My Gatherings portal.
+    type: application
+    key_concept: Recognizing the need to seek support when access information is missing
+  - question: After successfully logging into the My Gatherings portal, what indicates
+      that you have accessed the system correctly?
+    answer: You have successfully logged in if you see a landing page displaying a
+      gathering list. Depending on your onboarding time, your specific gathering may
+      be listed there.
+    type: comprehension
+    key_concept: Identifying successful access to the My Gatherings portal
+- page_number: 5
+  page_title: Basic Zoom Skills for Your First Gathering
+  module_context: 'Module 2: Zoom for Virtual Gatherings'
+  page_file: Module_02_Zoom for Virtual Gatherings/01_Basic Zoom Skills for Your First
+    Gathering.md
+  questions:
+  - question: What is the required format for the email address that missionaries
+      must use to log in to the Missionary Services website, and why is this important?
+    answer: Missionaries must use an @churchofjesuschrist.org email address to log
+      in to the Missionary Services website. This is important because using any other
+      email format will result in an error, preventing access to necessary resources.
+    type: comprehension
+    key_concept: Correct email format for login
+  - question: If a missionary encounters a problem logging in and sees the Microsoft
+      logo instead of the Church logo, what steps should they take to resolve this
+      issue?
+    answer: They should click on 'Sign-in options' at the bottom of the page and select
+      the Church Sign-in page to ensure they are on the correct login interface.
+    type: application
+    key_concept: Troubleshooting login issues
+  - question: Why is it recommended to keep a note of usernames and passwords for
+      future reference when accessing the Missionary Services website?
+    answer: It is recommended to keep a note of usernames and passwords to avoid difficulties
+      in logging in, as the website may log users out from time to time, and having
+      this information handy ensures quick access.
+    type: comprehension
+    key_concept: Importance of username and password management
+- page_number: 6
+  page_title: Download and Install the Zoom App
+  module_context: 'Module 2: Zoom for Virtual Gatherings'
+  page_file: Module_02_Zoom for Virtual Gatherings/02_Download and Install the Zoom
+    App.md
+  questions: []
+- page_number: 7
+  page_title: How to Open Your Zoom Room
+  module_context: 'Module 2: Zoom for Virtual Gatherings'
+  page_file: Module_02_Zoom for Virtual Gatherings/03_How to Open Your Zoom Room.md
+  questions:
+  - question: Why is it recommended to use the Zoom Workplace app instead of hosting
+      meetings on an iPad or tablet?
+    answer: The Zoom Workplace app is necessary for full access to Zoom features,
+      and iPads or tablets do not support critical Zoom functions needed for virtual
+      gatherings.
+    type: comprehension
+    key_concept: Importance of using the Zoom Workplace app for hosting meetings
+  - question: Describe the steps you would take to install the Zoom app on a Windows
+      computer after accessing the download page.
+    answer: Go to zoom.us/download, click the blue Download button for Windows, locate
+      the downloaded file in the Downloads folder, double-click to open it, and follow
+      the installation prompts until it's complete.
+    type: application
+    key_concept: Procedure for installing the Zoom app on Windows
+  - question: How can you verify if your Mac uses Apple Silicon or Intel before downloading
+      the Zoom app?
+    answer: Click the Apple icon in the top left of the screen, select 'About This
+      Mac', and check the chip type listed there to determine whether to download
+      the version for Apple Silicon or Intel.
+    type: application
+    key_concept: Identifying the type of chip on a Mac for appropriate Zoom download
+- page_number: 8
+  page_title: Learn Your Zoom Room Tools
+  module_context: 'Module 2: Zoom for Virtual Gatherings'
+  page_file: Module_02_Zoom for Virtual Gatherings/04_Learn Your Zoom Room Tools.md
+  questions:
+  - question: What is the first step you need to take before joining a Zoom meeting?
+    answer: You need to open the Zoom desktop app and log in to your account.
+    type: comprehension
+    key_concept: Opening the Zoom app and logging in
+  - question: Explain why it's important to click 'Join with computer audio' after
+      your Zoom room launches.
+    answer: Clicking 'Join with computer audio' activates your microphone, which is
+      essential for participating in the meeting and communicating with others.
+    type: application
+    key_concept: Activating microphone for meetings
+  - question: If you want your microphone to automatically activate each time you
+      enter your Zoom room, what should you do?
+    answer: You should click the checkbox for 'Automatically join audio by computer
+      when joining' to ensure your microphone activates automatically.
+    type: application
+    key_concept: Setting up automatic audio joining
+- page_number: 9
+  page_title: How to Update Your Personal Profile
+  module_context: 'Module 2: Zoom for Virtual Gatherings'
+  page_file: Module_02_Zoom for Virtual Gatherings/05_How to Update Your Personal
+    Profile.md
+  questions:
+  - question: What steps should you take to mute all participants in a Zoom meeting,
+      and why is this feature important?
+    answer: To mute all participants, click the participants icon in the menu bar,
+      then select the Mute All button at the bottom of the window. This feature is
+      important because it helps reduce background noise and allows for clearer communication
+      during the meeting.
+    type: application
+    key_concept: Managing participant audio settings
+  - question: How can you change your view settings to see all participants in a Zoom
+      meeting, and what is the preferred view setting for gathering meetings?
+    answer: To change your view settings, select View in the upper-right corner and
+      choose Gallery View. The preferred setting for gathering meetings is Gallery
+      View, which allows you to see all participants at once while highlighting the
+      speaker.
+    type: comprehension
+    key_concept: Understanding view options in Zoom
+  - question: Describe the process of sending a message to an individual participant
+      in the Chat feature of Zoom. What steps would you take to ensure the message
+      goes to the right person?
+    answer: 'To send a message to an individual participant, click the chat icon to
+      open the chat window. Then, click the blue dropdown in the To: section and select
+      the individual''s name. After that, type your message in the text box and click
+      the send icon or press Enter to send it. This process ensures that the message
+      is directed specifically to the chosen participant.'
+    type: application
+    key_concept: Using the Chat feature effectively
+- page_number: 10
+  page_title: How to Share Your Screen in Zoom
+  module_context: 'Module 2: Zoom for Virtual Gatherings'
+  page_file: Module_02_Zoom for Virtual Gatherings/06_How to Share Your Screen in
+    Zoom.md
+  questions:
+  - question: Why is it important to update your personal profile with a picture and
+      name on Zoom?
+    answer: Updating your profile with a picture and name makes you more approachable
+      and helps others recognize you during virtual gatherings.
+    type: comprehension
+    key_concept: Importance of personal profile updates
+  - question: Describe the steps you must take to update your display name in Zoom.
+    answer: Go to byupathway.zoom.us, sign in, click the Profile tab, select Edit
+      next to your current display name, enter your new name reflecting your missionary
+      calling, and then click the Save button.
+    type: application
+    key_concept: Procedure for updating display name
+  - question: If a fellow missionary asks you how to upload a profile picture on Zoom,
+      what would you tell them?
+    answer: Tell them to go to byupathway.zoom.us, sign in, click the Profile tab,
+      click the image placeholder to upload a picture from their computer files, and
+      then remember to save their changes.
+    type: application
+    key_concept: Procedure for uploading a profile picture
+- page_number: 11
+  page_title: Share Your Zoom Room Link
+  module_context: 'Module 2: Zoom for Virtual Gatherings'
+  page_file: Module_02_Zoom for Virtual Gatherings/07_Share Your Zoom Room Link.md
+  questions:
+  - question: What are the steps you need to follow to share your screen in a Zoom
+      meeting?
+    answer: To share your screen in a Zoom meeting, first open your Zoom room and
+      click the Share button in the bottom menu. Next, select the item you want to
+      display, ensuring it is open on your computer. Finally, click Share at the bottom
+      of the window to start sharing your selected screen.
+    type: application
+    key_concept: Procedural steps for sharing your screen in Zoom
+  - question: Why is it important to know how to share your screen during a virtual
+      gathering?
+    answer: Knowing how to share your screen is important because it allows you to
+      present PowerPoint slides, documents, and videos effectively to your students,
+      enhancing their learning experience.
+    type: comprehension
+    key_concept: Importance of screen sharing for effective teaching
+  - question: If you need to stop sharing your screen, what action must you take?
+    answer: To stop sharing your screen, you must select the red Stop Share button
+      located beneath the menu bar.
+    type: application
+    key_concept: Stopping screen sharing in Zoom
+- page_number: 12
+  page_title: Who Are Your Students?
+  module_context: 'Module 3: Contacting Your Students'
+  page_file: Module_03_Contacting Your Students/01_Who Are Your Students_.md
+  questions:
+  - question: What steps should you follow to share your Zoom meeting link with students?
+    answer: You should open your personal Zoom meeting room, click the green Information
+      Shield in the top-right corner, select 'Copy Link' to copy it to your clipboard,
+      then paste it into the content area of a new email. Use Bcc if emailing multiple
+      students to keep their emails private.
+    type: application
+    key_concept: Procedure for sharing Zoom meeting link
+  - question: Why is it important to use Bcc when emailing multiple students?
+    answer: Using Bcc is important because it keeps the email addresses of the recipients
+      private, ensuring that students' personal information is protected.
+    type: comprehension
+    key_concept: Privacy in communication
+  - question: After learning how to share your Zoom link, what additional resources
+      can you utilize to enhance your Zoom skills?
+    answer: You can utilize the assistance of your assigned zone or district leader,
+      who will help you develop additional Zoom skills beyond the basics taught in
+      this module.
+    type: application
+    key_concept: Utilization of resources for skill development
+- page_number: 13
+  page_title: Contact Your Students
+  module_context: 'Module 3: Contacting Your Students'
+  page_file: Module_03_Contacting Your Students/02_Contact Your Students.md
+  questions:
+  - question: What are some potential challenges that students may face when pursuing
+      higher education that missionaries should be aware of?
+    answer: Students may have previously attempted higher education and failed, have
+      been away from studies for years, face long working hours and family responsibilities,
+      deal with limited time, experience poverty, encounter challenging and costly
+      internet connections, and may lack English proficiency, which can make them
+      nervous about communication.
+    type: comprehension
+    key_concept: Understanding the challenges faced by students
+  - question: How can missionaries effectively support students who may not be familiar
+      with the Church's terminology and customs?
+    answer: Missionaries can approach these students by using clear and simple language,
+      being patient, providing explanations of unfamiliar terms, and creating a welcoming
+      atmosphere that encourages questions and engagement.
+    type: application
+    key_concept: Practical support strategies for diverse students
+  - question: In what ways can understanding a student's background and feelings enhance
+      a missionary's ability to contact and support them?
+    answer: By understanding a student's background and feelings, missionaries can
+      tailor their communication to be more empathetic and supportive, build rapport,
+      address specific concerns, and foster a sense of confidence and success in the
+      student.
+    type: comprehension
+    key_concept: Importance of empathy and understanding in student interactions
+- page_number: 14
+  page_title: Send an Email Message or Group Chat
+  module_context: 'Module 3: Contacting Your Students'
+  page_file: Module_03_Contacting Your Students/03_Send an Email Message or Group
+    Chat.md
+  questions:
+  - question: Why is early communication with students considered critical for their
+      success in the first term?
+    answer: Early communication helps to build a connection and support system for
+      students, which can enhance their engagement and motivation, ultimately leading
+      to better performance and retention in the program.
+    type: comprehension
+    key_concept: Importance of early contact with students
+  - question: After logging into My Gatherings, what are the two main steps you need
+      to follow to access your student list?
+    answer: First, click on the 'Students' tab in the navigation bar at the top of
+      the homepage. Then, view the central table that contains your student list,
+      which includes essential information about each student.
+    type: application
+    key_concept: Procedure to access student information
+  - question: What should you keep in mind regarding student information confidentiality
+      when contacting your students?
+    answer: You should keep student information confidential and only share their
+      contact information with their permission, ensuring their privacy is respected.
+    type: comprehension
+    key_concept: Confidentiality of student information
+- page_number: 15
+  page_title: New Student Visits
+  module_context: 'Module 3: Contacting Your Students'
+  page_file: Module_03_Contacting Your Students/04_New Student Visits.md
+  questions:
+  - question: What are the best initial methods for contacting students according
+      to the guidelines in this module?
+    answer: The best initial methods for contacting students include sending an email,
+      text, phone call, Facebook Messenger, or WhatsApp message.
+    type: comprehension
+    key_concept: Contact Methods
+  - question: How should you handle student email addresses when sending group emails?
+    answer: When sending group emails, you should use the blind carbon copy (Bcc)
+      feature to protect the privacy of the student email addresses.
+    type: application
+    key_concept: Email Communication Best Practices
+  - question: Describe the steps you would take to find a student's email address
+      using the My Gatherings portal.
+    answer: To find a student's email address, first go to the My Gatherings portal
+      homepage, then click the Students tab in the top navigation bar, scroll down
+      to the center table to see the student list, and locate the column for student
+      email addresses.
+    type: application
+    key_concept: Finding Student Email Addresses
+- page_number: 16
+  page_title: Your Role in the First Gathering
+  module_context: 'Module 4: Your First Gathering'
+  page_file: Module_04_Your First Gathering/01_Your Role in the First Gathering.md
+  questions:
+  - question: Why is it important to visit new students before the start of their
+      term in PC 101?
+    answer: Visiting new students helps ease their fears or concerns about attending
+      the first gathering, and it begins a friendship that supports them in their
+      educational journey.
+    type: comprehension
+    key_concept: Importance of personal visits to new students
+  - question: What steps should a missionary take to prepare a virtual student for
+      using Zoom effectively?
+    answer: A missionary should ask the student to download the Zoom application,
+      explain that they will have access to the Zoom room when they become the lead
+      student, and ensure the student tests their camera and microphone during the
+      visit.
+    type: application
+    key_concept: Preparing virtual students for online gatherings
+  - question: How can a missionary address a student's concerns about the honor code
+      while ensuring the student feels included?
+    answer: A missionary can explain that the honor code is about maintaining a respectful
+      attitude towards the beliefs of others and that it encourages honesty in their
+      work. They can also invite the student to focus on living the honor code to
+      gain personal testimony, emphasizing that it does not require them to join the
+      Church.
+    type: application
+    key_concept: Addressing concerns about the honor code and inclusion
+- page_number: 17
+  page_title: Lead and Observing Students
+  module_context: 'Module 4: Your First Gathering'
+  page_file: Module_04_Your First Gathering/02_Lead and Observing Students.md
+  questions:
+  - question: What is the role of the lead student during the first gathering, and
+      why is it important to set expectations for future lead students?
+    answer: The lead student is responsible for guiding the discussion during the
+      first gathering. Setting expectations is important because it helps establish
+      a supportive environment and outlines the responsibilities of future lead students,
+      ensuring a smooth transition and continuity in the learning process.
+    type: comprehension
+    key_concept: Role of lead student and setting expectations
+  - question: How should you decide which items from the Week 1 gathering agenda to
+      discuss during your first gathering?
+    answer: You should use the Week 1 gathering agenda as a guide, but also rely on
+      the Spirit to discern when to continue discussing certain topics and when to
+      move on to ensure an effective and engaging gathering.
+    type: application
+    key_concept: Utilizing the agenda and following inspiration
+  - question: Explain how the practice of students teaching one another enhances the
+      PathwayConnect experience during gatherings.
+    answer: Students teaching one another enhances the PathwayConnect experience by
+      fostering active participation, building meaningful relationships, and helping
+      students develop leadership and communication skills, which are all essential
+      for their personal and educational growth.
+    type: comprehension
+    key_concept: Peer teaching and its benefits
+- page_number: 18
+  page_title: Former PathwayConnect Completer
+  module_context: 'Module 4: Your First Gathering'
+  page_file: Module_04_Your First Gathering/03_Former PathwayConnect Completer.md
+  questions:
+  - question: What is the process for selecting observing students for each week in
+      the PathwayConnect gathering?
+    answer: The lead student for Week 1 selects an observing student for that week.
+      Then, this observing student will become the lead student for Week 2, and the
+      process continues with the lead student selecting a new observing student for
+      each subsequent week.
+    type: application
+    key_concept: Selection of lead and observing students
+  - question: Why is it important to conduct feedback sessions with lead and observing
+      students after each gathering?
+    answer: Feedback sessions are important because they help build confidence and
+      provide support to the students, ensuring they feel uplifted and prepared for
+      their roles in future gatherings.
+    type: comprehension
+    key_concept: Importance of feedback sessions
+  - question: How should you approach organizing the lead and observing students for
+      the remaining weeks of the term during the first gathering?
+    answer: You should ask for volunteers for the remaining weeks, allowing them to
+      select a date and topic that works best for them. It's also helpful to encourage
+      students to sign up in pairs to lead, and their names should be added to the
+      Gathering Outline in the My Gatherings portal.
+    type: application
+    key_concept: Organizing student roles for the term
+- page_number: 19
+  page_title: My Gatherings Portal and Student Information
+  module_context: 'Module 5: Learning More About the Student Information System'
+  page_file: Module_05_Learning More About the Student Information System/01_My Gatherings
+    Portal and Student Information.md
+  questions:
+  - question: Why is it beneficial to invite a PathwayConnect completer to the first
+      gathering?
+    answer: Inviting a PathwayConnect completer can provide inspiration and reassurance
+      to students who might have doubts or lack confidence, particularly those needing
+      to improve their English. Their personal experience can help new students relate
+      and feel more connected.
+    type: comprehension
+    key_concept: The role of a PathwayConnect completer in fostering connection and
+      confidence among new students.
+  - question: In what ways can a missionary ensure that the first gathering is a success,
+      according to the lesson?
+    answer: A missionary can ensure the first gathering is a success by facilitating
+      an environment where all participants feel connected to each other. Achieving
+      this sense of connection, regardless of other agenda points, constitutes a successful
+      gathering.
+    type: application
+    key_concept: Creating a successful gathering environment.
+  - question: What actions can a missionary take if they are a PathwayConnect completer
+      when preparing for the first gathering?
+    answer: If a missionary is a PathwayConnect completer, they can share their own
+      experiences during the gathering to help build rapport and trust among the new
+      students, thereby enhancing the overall connection in the group.
+    type: application
+    key_concept: Leveraging personal experiences to enhance group dynamics.
+- page_number: 20
+  page_title: Monitor Student Progress
+  module_context: 'Module 5: Learning More About the Student Information System'
+  page_file: Module_05_Learning More About the Student Information System/02_Monitor
+    Student Progress.md
+  questions:
+  - question: What types of warning signs can you identify using the My Gatherings
+      portal, and why is it important to address these signs promptly?
+    answer: You can identify warning signs such as academic struggles, lack of participation
+      in online courses, financial issues that may prevent future registration, and
+      delayed or missing registration for the next PathwayConnect term. It is important
+      to address these signs promptly to provide support to students and help them
+      overcome obstacles to their academic success.
+    type: comprehension
+    key_concept: Warning signs identified in My Gatherings portal
+  - question: If you notice a student has not participated in their online course
+      for a week, what steps should you take using the My Gatherings portal?
+    answer: You should check the student's registration data and academic progress
+      in the My Gatherings portal. Then, contact the student to inquire about their
+      lack of participation and see if there are any issues you can help them resolve.
+    type: application
+    key_concept: Using My Gatherings to support students
+  - question: Why is it critical to check the My Gatherings portal regularly, and
+      what specific student information should you focus on?
+    answer: It is critical to check the My Gatherings portal regularly to stay informed
+      about your students' academic progress and to identify any potential issues
+      early on. You should focus on student registration data, academic progress,
+      and participation levels in online courses.
+    type: comprehension
+    key_concept: Importance of regular monitoring in My Gatherings
+- page_number: 21
+  page_title: Create Gathering Meeting Outlines
+  module_context: 'Module 5: Learning More About the Student Information System'
+  page_file: Module_05_Learning More About the Student Information System/03_Create
+    Gathering Meeting Outlines.md
+  questions:
+  - question: How can missionaries filter the student list by gathering groups when
+      accessing the My Students page?
+    answer: Missionaries can filter the student list by selecting one or multiple
+      gatherings from the options at the top of the My Students page and then clicking
+      'Apply Filter' to see the results.
+    type: application
+    key_concept: Filtering student lists by gathering groups
+  - question: What information can missionaries view about each student in the My
+      Students section, and why is this information important?
+    answer: Missionaries can view essential information such as a student's last access
+      date to the LMS and their current grade. This data is important as it assists
+      in ministering and caring for the students effectively.
+    type: comprehension
+    key_concept: Understanding student progress and information available
+  - question: Describe the process a missionary should follow to export a student
+      list to an Excel file.
+    answer: To export a student list, a missionary should go to the My Students page,
+      find the 'Export Student List' link, filter the group they want to export, click
+      'Apply Filter', and then click the 'Export List to Excel' button to download
+      the file.
+    type: application
+    key_concept: Exporting student lists for offline access
+- page_number: 22
+  page_title: Missionary Training and Resources
+  module_context: 'Module 6: Next Steps in Your Orientation Training'
+  page_file: Module_06_Next Steps in Your Orientation Training/01_Missionary Training
+    and Resources.md
+  questions:
+  - question: What steps should you follow to create a Gathering Meeting Outline for
+      your group?
+    answer: To create a Gathering Meeting Outline, click 'Create a Gathering Outline'
+      to open the pop-up window, select your gathering and course using the magnifying
+      glass, choose the academic period, and then select 'All' to generate all weekly
+      outlines or individual options for a specific week before clicking 'Create'.
+    type: application
+    key_concept: Procedure for creating Gathering Meeting Outlines
+  - question: Why is it necessary to mark a meeting as completed in the meeting record?
+    answer: Marking a meeting as completed moves it into the 'Completed Gathering
+      Meetings' view, which helps keep track of which meetings have already been held
+      and ensures proper documentation of the gathering progress.
+    type: comprehension
+    key_concept: Importance of marking meetings as completed
+  - question: If you are creating meeting outlines for PC 101, what weeks do you need
+      to focus on and what is the maximum number of outlines you can create?
+    answer: You need to focus on creating meeting outlines for weeks 1-7 for PC 101,
+      and the maximum number of outlines you can create is 7 for this course.
+    type: comprehension
+    key_concept: Understanding weekly outline requirements for PC 101
+- page_number: 23
+  page_title: Your Orientation Trainer and Additional Training Resources
+  module_context: 'Module 6: Next Steps in Your Orientation Training'
+  page_file: Module_06_Next Steps in Your Orientation Training/02_Your Orientation
+    Trainer and Additional Training Resources.md
+  questions:
+  - question: What should you ensure regarding your church user password before logging
+      into the Missionary Services website, and why is it important?
+    answer: Your church user password should be 12 or more characters long to avoid
+      your access being locked. This is important to ensure that you can log in successfully
+      and access the necessary resources for your responsibilities.
+    type: comprehension
+    key_concept: Importance of password requirements for accessing the Missionary
+      Services website
+  - question: Describe the steps you would take to navigate back to the homepage of
+      the Missionary Services website if you are on a different page.
+    answer: You can navigate back to the homepage by clicking 'Missionary Services
+      Hub' or the site title 'BYU-Pathway Missionary Services' or logo. These options
+      allow you to return to the starting point from any page.
+    type: application
+    key_concept: Navigating the Missionary Services website
+  - question: If you want to provide feedback on the Missionary Services website,
+      which menu option would you select and what kind of feedback can you give?
+    answer: You would select the 'Support' menu and then choose the 'Give Feedback'
+      option. You can provide feedback regarding missing content or issues that need
+      attention on the site.
+    type: comprehension
+    key_concept: Feedback process on the Missionary Services website
