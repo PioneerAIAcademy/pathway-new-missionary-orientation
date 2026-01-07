@@ -155,25 +155,31 @@ class Rise360Crawler:
         logging.info("\n" + "="*60)
         logging.info("VERIFYING COURSE STRUCTURE")
         logging.info("="*60)
-        
+
         nav_items = self.course_frame.locator("nav a")
         actual_count = await nav_items.count()
-        
+
         expected_count = 1 + sum(len(m['lessons']) for m in self.course_structure['modules'])
-        
+
         logging.info(f"Expected lessons: {expected_count}")
         logging.info(f"Found nav items: {actual_count}")
-        
-        # List actual navigation items
+
+        # List actual navigation items and detect duplicates
         logging.info("\nActual Navigation Items:")
-        for i in range(min(actual_count, 25)):
+        seen_texts = {}
+        for i in range(min(actual_count, 30)):
             item = nav_items.nth(i)
             text = await item.inner_text()
-            logging.info(f"  [{i}] {text.strip()}")
-        
+            text = text.strip()
+            logging.info(f"  [{i}] {text}")
+            if text in seen_texts:
+                logging.warning(f"       ^ DUPLICATE of index {seen_texts[text]}")
+            else:
+                seen_texts[text] = i
+
         if actual_count < expected_count:
             logging.warning(f"Warning: Found fewer items than expected!")
-        
+
         logging.info("="*60 + "\n")
 
     async def _crawl_course(self):
@@ -220,14 +226,30 @@ class Rise360Crawler:
     async def _crawl_introduction(self, intro):
         """Crawl the introduction lesson"""
         logging.info(f"\nCrawling Introduction: {intro['title']}")
-        
-        # Click the introduction in navigation
-        nav_items = self.course_frame.locator("nav a")
-        intro_link = nav_items.nth(intro['nav_index'])
-        
-        await intro_link.click()
-        await asyncio.sleep(4)
-        
+
+        # Click by matching the title text exactly
+        title = intro['title']
+        nav_link = self.course_frame.locator(f"nav a:has-text('{title}')").first
+
+        # Verify the link exists
+        link_count = await nav_link.count()
+        if link_count == 0:
+            logging.error(f"Could not find navigation link for: {title}")
+            return
+
+        click_text = await nav_link.inner_text()
+        logging.info(f"   Clicking nav item: '{click_text.strip()}'")
+
+        await nav_link.click()
+
+        # Wait for navigation to complete
+        await asyncio.sleep(2)
+        try:
+            await self.page.wait_for_load_state('networkidle', timeout=10000)
+        except Exception:
+            pass
+        await asyncio.sleep(5)
+
         # Extract content
         content = await self._extract_lesson_content()
         
@@ -245,19 +267,33 @@ class Rise360Crawler:
     async def _crawl_lesson(self, lesson, lesson_num, module_num, module_title, module_dir):
         """Crawl a single lesson within a module"""
         lesson_title = lesson['title']
-        nav_index = lesson['nav_index']
-        
+
         logging.info(f"\n{'-'*60}")
         logging.info(f"Crawling: Module {module_num}.{lesson_num} - {lesson_title}")
         logging.info(f"{'-'*60}")
-        
-        # Click the lesson in navigation
-        nav_items = self.course_frame.locator("nav a")
-        lesson_link = nav_items.nth(nav_index)
-        
-        await lesson_link.click()
-        await asyncio.sleep(4)
-        
+
+        # Click by matching the title text exactly
+        nav_link = self.course_frame.locator(f"nav a:has-text('{lesson_title}')").first
+
+        # Verify the link exists
+        link_count = await nav_link.count()
+        if link_count == 0:
+            logging.error(f"Could not find navigation link for: {lesson_title}")
+            return
+
+        click_text = await nav_link.inner_text()
+        logging.info(f"   Clicking nav item: '{click_text.strip()}'")
+
+        await nav_link.click()
+
+        # Wait for navigation to complete
+        await asyncio.sleep(2)
+        try:
+            await self.page.wait_for_load_state('networkidle', timeout=10000)
+        except Exception:
+            pass
+        await asyncio.sleep(5)
+
         # Extract content
         content = await self._extract_lesson_content()
         
