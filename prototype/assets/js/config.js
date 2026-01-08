@@ -1,13 +1,13 @@
 // Configuration
 export const CONFIG = {
-  appName: 'BYU-Pathway Assessment',
-  version: '1.0.0',
+  appName: import.meta.env.VITE_APP_NAME || 'BYU-Pathway Assessment',
+  version: import.meta.env.VITE_APP_VERSION || '1.0.0',
   
   // API Configuration
   openai: {
-    apiKey: '', // Add your OpenAI API key here
-    endpoint: 'https://api.openai.com/v1/chat/completions',
-    model: 'gpt-4o-mini' // Cost-effective for validation
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY || '', // Set in .env file
+    endpoint: import.meta.env.VITE_OPENAI_ENDPOINT || 'https://api.openai.com/v1/chat/completions',
+    model: import.meta.env.VITE_OPENAI_MODEL || 'gpt-4o-mini' // Cost-effective for validation
   },
   
   // Storage keys
