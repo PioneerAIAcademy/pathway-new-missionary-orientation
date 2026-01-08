@@ -1,0 +1,130 @@
+/* Animations - Smooth, 60fps optimized */
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+  }
+  to { 
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from { 
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  0%, 60%, 100% { 
+    opacity: 0.3;
+  }
+  30% { 
+    opacity: 1;
+  }
+}
+
+@keyframes progressFill {
+  from { 
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to { 
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1;
+  }
+  50% { 
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation Utilities */
+.animate-fadeIn {
+  animation: fadeIn var(--transition-base) ease;
+}
+
+.animate-slideUp {
+  animation: slideUp var(--transition-slow) ease;
+}
+
+.animate-slideDown {
+  animation: slideDown var(--transition-slow) ease;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft var(--transition-slow) ease;
+}
+
+.animate-scaleIn {
+  animation: scaleIn var(--transition-base) ease;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
