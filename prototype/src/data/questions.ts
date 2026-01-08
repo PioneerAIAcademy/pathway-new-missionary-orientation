@@ -42,11 +42,33 @@ export const MODULES: Module[] = [
           },
           {
             id: 'Q1-2',
-            text: 'How do you activate your Church-issued Zoom account?',
-            expectedAnswer: 'Use your Church Account username and password to sign in and activate it',
+            text: 'Looking at this email, what button should you click to begin activating your Zoom account?',
+            expectedAnswer: 'Activate Your Zoom Account',
             type: 'procedural',
             priority: 'HIGH',
-            hints: ['You use existing Church credentials', 'No separate registration needed']
+            hints: ['Look for the blue button', 'It\'s clearly labeled'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/y7WsNek8aj2k2hK9.png',
+            imageAlt: 'Zoom activation email with Activate Your Zoom Account button'
+          },
+          {
+            id: 'Q1-2b',
+            text: 'On this Zoom sign-up page, which option is recommended for creating your account password?',
+            expectedAnswer: 'Sign Up with a Password',
+            type: 'procedural',
+            priority: 'MEDIUM',
+            hints: ['Look at the bottom of the page', 'The training focuses on this option'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/2e-6GiH7_JEt95uG.png',
+            imageAlt: 'Zoom sign-up page showing different sign-up options'
+          },
+          {
+            id: 'Q1-2c',
+            text: 'If you are merging an existing Zoom account, what button should you click in the verification email?',
+            expectedAnswer: 'Approve the Request',
+            type: 'procedural',
+            priority: 'MEDIUM',
+            hints: ['Look for the blue button', 'It approves the merge'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/a84h4qsh9zV7sj1i.png',
+            imageAlt: 'Zoom account merge verification email'
           }
         ]
       },
@@ -56,7 +78,7 @@ export const MODULES: Module[] = [
         questions: [
           {
             id: 'Q1-3',
-            text: 'What is the Student Information System used for?',
+            text: 'What is the My Gatherings portal used for?',
             expectedAnswer: 'To view student information, track progress, and manage gatherings',
             type: 'comprehension',
             priority: 'HIGH',
@@ -64,10 +86,33 @@ export const MODULES: Module[] = [
           },
           {
             id: 'Q1-4',
-            text: 'How do you access the Student Information System?',
-            expectedAnswer: 'Through the missionary portal using your Church Account credentials',
+            text: 'Looking at this registration screen, what button should you click after entering your invitation code?',
+            expectedAnswer: 'Register',
             type: 'procedural',
-            priority: 'MEDIUM'
+            priority: 'HIGH',
+            hints: ['It\'s a button on the form', 'You click it after filling in the code'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/TUnfTVelRonBMfbQ.png',
+            imageAlt: 'My Gatherings portal registration page with invitation code field'
+          },
+          {
+            id: 'Q1-4b',
+            text: 'On this login page, what should you enter in the username field?',
+            expectedAnswer: 'Your Church username',
+            type: 'procedural',
+            priority: 'HIGH',
+            hints: ['It\'s the same as FamilySearch or tithing', 'Church account credentials'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/Yy5g2mIvvDtYQkRI.png',
+            imageAlt: 'Church account login screen'
+          },
+          {
+            id: 'Q1-4c',
+            text: 'How do you know you have successfully logged into My Gatherings? What do you see?',
+            expectedAnswer: 'A landing page showing a gathering list',
+            type: 'comprehension',
+            priority: 'MEDIUM',
+            hints: ['Look for your gatherings', 'It shows a list'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/SkQCMZAQBTyNA3XW.png',
+            imageAlt: 'My Gatherings portal landing page showing gathering list'
           }
         ]
       },
@@ -78,10 +123,40 @@ export const MODULES: Module[] = [
           {
             id: 'Q1-5',
             text: 'Where can you find ongoing training materials and resources?',
-            expectedAnswer: 'In the missionary resource portal and training library',
+            expectedAnswer: 'On the Missionary Services website at missionary.byupathway.org',
             type: 'recall',
             priority: 'MEDIUM',
-            hints: ['There\'s a dedicated portal for missionaries', 'Look for the resource library']
+            hints: ['There\'s a dedicated website for missionaries', 'Look for Missionary Services']
+          },
+          {
+            id: 'Q1-5b',
+            text: 'Looking at this login screen, which logo indicates you are on the correct sign-in page?',
+            expectedAnswer: 'The Church logo (not Microsoft)',
+            type: 'procedural',
+            priority: 'HIGH',
+            hints: ['Look at the logo on the page', 'Microsoft logo means wrong page'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/Rji_vfIj-K0d4CDY.jpg',
+            imageAlt: 'Church of Jesus Christ login page with Church logo'
+          },
+          {
+            id: 'Q1-5c',
+            text: 'What email address must you use when logging in to Missionary Services, even though it is not your personal email?',
+            expectedAnswer: 'missionary@churchofjesuschrist.org',
+            type: 'procedural',
+            priority: 'HIGH',
+            hints: ['It ends with @churchofjesuschrist.org', 'Everyone uses the same email to start'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/vEVlP4osgp8v5l53.png',
+            imageAlt: 'Missionary Services login screen showing email field'
+          },
+          {
+            id: 'Q1-5d',
+            text: 'This error screen shows a common login problem. What mistake causes this error?',
+            expectedAnswer: 'Using a Gmail, Yahoo, or Microsoft email address instead of @churchofjesuschrist.org',
+            type: 'comprehension',
+            priority: 'MEDIUM',
+            hints: ['Look at what email domain was used', 'The wrong type of email causes this'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/_Qgqn3Ow-J9ZDODn.png',
+            imageAlt: 'Error screen showing incorrect email login attempt'
           }
         ]
       }
@@ -286,19 +361,19 @@ export const MODULES: Module[] = [
           {
             id: 'Q5-1',
             text: 'What is the My Gatherings portal used for?',
-            expectedAnswer: 'To manage gathering schedules, view student lists, and track attendance',
+            expectedAnswer: 'To store student registration data, academic progress, and identify warning signs like academic struggles or financial issues',
             type: 'comprehension',
             priority: 'HIGH'
           },
           {
             id: 'Q5-2',
-            text: 'Where do you find your student list for your assigned gathering?',
-            expectedAnswer: 'In the My Gatherings portal under the student list section',
+            text: 'Looking at this gathering list page, what information can you see about your assigned gatherings?',
+            expectedAnswer: 'The gathering list showing your assigned students and group information',
             type: 'procedural',
             priority: 'MEDIUM',
-            hints: ['Look in the My Gatherings portal', 'There\'s a dedicated student list view'],
-            imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-            imageAlt: 'Screenshot of student information system portal'
+            hints: ['Look at the page layout', 'It shows your gatherings and students'],
+            imageUrl: 'https://articulateusercontent.com/rise/courses/fJwTzl1r-7VM_3Y6bjdTrFMnUm0S2JFw/SkQCMZAQBTyNA3XW.png',
+            imageAlt: 'My Gatherings portal showing gathering list'
           }
         ]
       },
