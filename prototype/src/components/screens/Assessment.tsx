@@ -3,7 +3,7 @@ import { AssessmentState, QuestionResponse, updateProgress, calculateResults } f
 import { getAllQuestions } from '../../data/questions';
 import { validateAnswer, shouldSkipModule, shouldOfferEarlyCompletion, isStrugglingInModule } from '../../utils/validation';
 import { MODULES } from '../../data/questions';
-import { AlertCircle, CheckCircle, HelpCircle, Send } from 'lucide-react';
+import { AlertCircle, CheckCircle, HelpCircle, Send, Bot, Sparkles } from 'lucide-react';
 
 interface AssessmentProps {
   state: AssessmentState;
@@ -16,6 +16,7 @@ export const Assessment: React.FC<AssessmentProps> = ({ state, onComplete, onUpd
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(state.progress.currentQuestionIndex || 0);
   const [lastFeedback, setLastFeedback] = useState<{ isCorrect: boolean; message: string } | null>(null);
   const [consecutiveCorrect, setConsecutiveCorrect] = useState<Record<number, number>>({});
+  const [showIntro, setShowIntro] = useState(currentQuestionIndex === 0 && state.responses.length === 0);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const questions = getAllQuestions(state.mode === 'topic-selection' ? state.selectedModules : undefined);
@@ -243,6 +244,113 @@ export const Assessment: React.FC<AssessmentProps> = ({ state, onComplete, onUpd
           display: 'flex',
           flexDirection: 'column'
         }}>
+          {/* AI Introduction Message */}
+          {showIntro && (
+            <div style={{
+              background: 'linear-gradient(135deg, rgba(110, 86, 207, 0.1), rgba(110, 86, 207, 0.05))',
+              border: '1px solid rgba(110, 86, 207, 0.3)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'var(--space-6)',
+              marginBottom: 'var(--space-6)',
+              animation: 'slideUp 0.4s ease'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: 'var(--space-4)'
+              }}>
+                <div style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: 'var(--radius-md)',
+                  background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  <Bot size={24} color="white" />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-2)',
+                    marginBottom: 'var(--space-2)'
+                  }}>
+                    <span style={{
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      color: 'var(--text-primary)'
+                    }}>
+                      Orientation Trainer
+                    </span>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      background: 'rgba(110, 86, 207, 0.2)',
+                      padding: '2px 8px',
+                      borderRadius: 'var(--radius-full)',
+                      fontSize: '0.6875rem',
+                      color: 'var(--accent-secondary)',
+                      fontWeight: 500
+                    }}>
+                      <Sparkles size={10} />
+                      AI
+                    </div>
+                  </div>
+                  <p style={{
+                    fontSize: '0.9375rem',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.6,
+                    marginBottom: 'var(--space-3)'
+                  }}>
+                    Welcome{state.name ? `, ${state.name}` : ''}! 👋 I'm your orientation trainer, here to help you through your missionary training assessment.
+                  </p>
+                  <p style={{
+                    fontSize: '0.9375rem',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.6,
+                    marginBottom: 'var(--space-3)'
+                  }}>
+                    <strong style={{ color: 'var(--text-primary)' }}>My mission:</strong> To identify what you already know so you can skip unnecessary training and focus on areas where you need growth.
+                  </p>
+                  <p style={{
+                    fontSize: '0.9375rem',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.6,
+                    marginBottom: 'var(--space-4)'
+                  }}>
+                    <strong style={{ color: 'var(--text-primary)' }}>How this works:</strong> I'll ask you questions about various orientation topics. Answer in your own words — there's no need for perfect responses. I'll provide feedback as we go.
+                  </p>
+                  <button
+                    onClick={() => setShowIntro(false)}
+                    style={{
+                      background: 'var(--accent-primary)',
+                      border: 'none',
+                      color: 'white',
+                      padding: 'var(--space-2) var(--space-4)',
+                      borderRadius: 'var(--radius-md)',
+                      fontSize: '0.875rem',
+                      fontWeight: 500,
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'var(--accent-secondary)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'var(--accent-primary)';
+                    }}
+                  >
+                    Let's Begin →
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Feedback */}
           {lastFeedback && (
             <div style={{

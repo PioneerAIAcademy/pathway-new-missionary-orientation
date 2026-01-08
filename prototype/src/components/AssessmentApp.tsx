@@ -36,10 +36,11 @@ export const AssessmentApp: React.FC = () => {
     }
   };
 
-  const handleStart = (name: string) => {
+  const handleStart = (name: string, email?: string) => {
     setState(prev => ({
       ...prev,
       name,
+      missionaryId: email || prev.missionaryId,
       startTime: new Date().toISOString()
     }));
     setCurrentScreen('mode-selection');
