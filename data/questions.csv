@@ -1,0 +1,87 @@
+question_id,question,correct_answer,feedback_correct,feedback_incorrect,question_type,choices,refer_to_trainer
+Q1,"What area will you be assigned for your gathering? Type ""I don't know"" if you are unsure.","Any of the 24 areas, or 'I don't know'","Great! We've noted your area assignment.","If you don't know your area yet, that's okay. Please contact your trainer to find out your assignment.",text,,no
+Q2,"What program will you be working with?","EnglishConnect -- In-Person, EnglishConnect -- Virtual (Online), PathwayConnect -- In-Person, PathwayConnect -- Virtual (Online), or I don't know yet","Thank you for confirming your program.","If you don't know which program yet, please contact your trainer for clarification.",choice,EnglishConnect -- In-Person|EnglishConnect -- Virtual (Online)|PathwayConnect -- In-Person|PathwayConnect -- Virtual (Online)|I don't know yet,no
+Q3,"We need to get you access to your student gathering list with contact information. Please follow these instructions in a new browser window:
+
+1. Find your login email sent from missionary-pw@byupw.edu
+2. Copy and paste the link from your email into your preferred browser
+3. You will be directed to a registration page with your invitation code
+4. Ignore the checkbox labeled 'I have an existing account'
+5. Click Register
+6. Next, you will be redirected to the Church account sign in page
+7. Enter your regular Church username and password to continue
+8. You will be taken to the homepage of the My Gatherings portal
+
+Were you able to log in to the My Gatherings portal?",Yes,"Excellent! You're now logged in to My Gatherings.","Please contact your trainer for help logging in to the My Gatherings portal. Do not proceed until you can successfully log in.",yes_no,,yes
+Q4,"Missionaries need to make an initial contact with each student as soon as the student appears in the missionary's gathering list. To access your student list and locate student contact information, do the following:
+
+a. Log in to My Gatherings
+b. Click on Students in the top navigation
+c. Click in the box to the left of the gathering name
+d. Scroll down and click on Apply Filter
+e. Your list of students including their contact information will be displayed
+
+Were you able to get your student list and your students' contact information?",Yes,"Great job! You can now see your student list.","Please contact your trainer for help accessing your student list. Do not proceed until you can view your students.",yes_no,,yes
+Q5,"There are basically 3 preferred methods for making initial contact with a student:
+1. SMS Text - preferred in the U.S. and Canada
+2. WhatsApp - preferred in most International Countries
+3. Facebook Messenger - preferred by most people in the Pacific
+
+Would you like to see a sample message? Type: SMS Text, WhatsApp, or Facebook Messenger","SMS Text, WhatsApp, or Facebook Messenger","Here is a sample message based on your selection:
+
+**For SMS Text:**
+Hi! This is Elder & Sister Smith from BYU-Pathway Worldwide. We see that you have enrolled in PathwayConnect and we want to welcome you to your education adventure. Would you please call or text us so we can schedule a time to visit with you, give you some information and answer questions you might have. Our phone number is 222-222-2222. Thank you. We look forward to talking with you soon.
+
+**For WhatsApp:**
+Hi! This is Elder & Sister Smith from BYU-Pathway Worldwide. We see that you have enrolled in PathwayConnect and want to welcome you to your education adventure. Would you please call or send a chat to us so we can schedule a time to visit with you, give you some information and answer questions you might have. Our WhatsApp phone number is 2-222-222-2222. Thank you. We look forward to talking with you soon.
+
+**For Facebook Messenger:**
+Hi! This is Elder & Sister Smith from BYU-Pathway Worldwide. We see that you have enrolled in PathwayConnect and want to welcome you to your education adventure. Would you please call or message us so we can schedule a time to visit with you, give you some information and answer questions you might have. Our phone number is 222-222-2222. Thank you. We look forward to talking with you soon.","Please type one of the three options: SMS Text, WhatsApp, or Facebook Messenger.",text,,no
+Q6,"For the greatest chance for success contacting a student, here is a suggested process:
+
+1. Text or message
+2. Send a followup text or message
+3. Phone call
+4. Send an email
+
+Would you like more explanation?",Yes,"Great! Here's the detailed process:
+
+**First:** Send a Text or message
+**Second:** If no response within a couple of days, send a followup text or message
+**Third:** If no response to second text/message, follow up with a phone call. If no answer, leave a message.
+**Fourth:** Send an email
+
+This graduated approach helps ensure you make contact while respecting the student's preferred communication method.","No problem! Remember the basic order: text/message first, then follow-up message, then phone call, then email.",yes_no,,no
+Q7,"Please read the following about conducting a New Student Visit, then type what you remember about how to conduct one.
+
+Key points to cover in a New Student Visit:
+- Explain your role as a missionary
+- Get to know the student (family, background, education, goals)
+- Discuss future aspirations
+- Explain religious studies participation expectations
+- Provide gathering information (date, time, location)
+- Explain lead and observing student roles
+- For virtual students, verify Zoom connection
+- Encourage scholarship registration (Heber J. Grant Scholarship)
+- Discuss religion course selection
+- Conclude with a prayer (if appropriate)","The answer should include key points about: explaining missionary role, getting to know the student, discussing aspirations, explaining religious studies, providing gathering info, explaining roles, verifying virtual connection if applicable, encouraging scholarship, discussing religion courses, and offering prayer.","Excellent recall! You covered the key elements of a New Student Visit.","Here are the points you may have missed:
+
+1. **Explain Your Role:** Start by explaining your role as a missionary and the support you will provide
+
+2. **Get to Know the Student:** Ask about family, church background, previous education, goals, and reasons for registering
+
+3. **Discuss Future Aspirations:** Help the student envision who they can become
+
+4. **Religious Studies Participation:** Explain that participation in religious studies is expected
+
+5. **Gathering Information:** Provide date, time, and location details
+
+6. **Roles in Gatherings:** Explain lead and observing student roles
+
+7. **Virtual Connection:** For virtual students, verify Zoom connectivity
+
+8. **Encourage Scholarship Registration:** Mention the Heber J. Grant Scholarship
+
+9. **Religion Course Selection:** Ask which religion course they selected
+
+10. **Conclude with Prayer:** Offer to give a prayer to end the visit",text,,no

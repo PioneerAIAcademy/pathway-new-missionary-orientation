@@ -1,4 +1,18 @@
+"""
+Rise360 Course Crawler
+======================
+
+A tool to crawl Rise360 courses and convert them to Markdown format.
+This is a standalone utility - not used by the main training bot app.
+
+Usage:
+    python src/crawler.py --url "https://rise.articulate.com/share/..." --output-dir output
+
+Author: Pioneer Academy Team
+"""
+
 import asyncio
+import argparse
 import logging
 import os
 import json
@@ -6,7 +20,10 @@ from pathlib import Path
 from playwright.async_api import async_playwright
 from playwright._impl._errors import TimeoutError as PlaywrightTimeoutError
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 class Rise360Crawler:
     def __init__(self, course_url: str, output_dir: str = "output", headless: bool = False):
@@ -516,10 +533,38 @@ class Rise360Crawler:
         return filename.strip()[:100]
 
 async def main():
-    course_url = "https://rise.articulate.com/share/7L8FnenKhVYRkTWnAQ-7b0IQ9jx_Brdq"
-    logging.info(f"Starting crawl for BYU-Pathway course")
-    async with Rise360Crawler(course_url, headless=False) as crawler:
+    """
+    Main function to run the Rise360 crawler.
+
+    Parses command-line arguments and runs the crawler.
+    """
+    parser = argparse.ArgumentParser(
+        description="Crawl a Rise360 course and convert it to Markdown."
+    )
+    parser.add_argument(
+        "--url",
+        default="https://rise.articulate.com/share/7L8FnenKhVYRkTWnAQ-7b0IQ9jx_Brdq",
+        help="The Rise360 course URL to crawl"
+    )
+    parser.add_argument(
+        "--output-dir",
+        default="output",
+        help="The directory to save the output files."
+    )
+    parser.add_argument(
+        "--headless",
+        action="store_true",
+        help="Run browser in headless mode (no visible window)"
+    )
+    args = parser.parse_args()
+
+    logging.info(f"Starting crawl for course: {args.url}")
+
+    async with Rise360Crawler(args.url, args.output_dir, headless=args.headless) as crawler:
         await crawler.run()
+
+    logging.info("Crawling finished.")
+
 
 if __name__ == "__main__":
     asyncio.run(main())
