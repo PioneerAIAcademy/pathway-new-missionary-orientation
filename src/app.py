@@ -3,13 +3,15 @@ NMO Training Bot - Main Application
 ====================================
 
 This is the main Streamlit application for the New Missionary Orientation training tool.
-It presents questions, evaluates answers using AI, and tracks progress.
+It uses a two-phase flow:
+  1. Routing phase: Collects missionary's area, program, and format
+  2. Training phase: Loads program-specific questions from a CSV and evaluates answers
 
 To run this app (from project root):
     streamlit run src/app.py
 
 Author: Pioneer Academy Team
-Version: 1.0 (MVP)
+Version: 2.0
 """
 
 # =============================================================================
@@ -45,8 +47,13 @@ st.set_page_config(
     layout="centered"
 )
 
-# File paths
-QUESTIONS_FILE = PROJECT_ROOT / "data" / "questions.csv"
+# Mapping of (program, format) -> CSV file path
+CSV_MAP = {
+    ("PathwayConnect", "Virtual"):   PROJECT_ROOT / "data" / "pathwayconnect_virtual.csv",
+    ("PathwayConnect", "In-Person"): PROJECT_ROOT / "data" / "pathwayconnect_inperson.csv",
+    ("EnglishConnect", "Virtual"):   PROJECT_ROOT / "data" / "englishconnect_virtual.csv",
+    ("EnglishConnect", "In-Person"): PROJECT_ROOT / "data" / "englishconnect_inperson.csv",
+}
 
 # localStorage key for saving progress
 STORAGE_KEY = "nmo_training_progress"
@@ -56,29 +63,22 @@ STORAGE_KEY = "nmo_training_progress"
 # HELPER FUNCTIONS
 # =============================================================================
 
-@st.cache_data  # Cache the result so we don't re-read the file on every rerun
-def load_questions():
+@st.cache_data
+def load_questions(file_path: str):
     """
-    Load questions from the CSV file.
+    Load questions from a CSV file.
+
+    Args:
+        file_path: Path to the CSV file to load
 
     Returns:
         pandas.DataFrame: A table containing all questions and their metadata
-
-    The CSV file should have these columns:
-        - question_id: Unique identifier (Q1, Q2, etc.)
-        - question: The question text
-        - correct_answer: What counts as correct
-        - feedback_correct: Message for correct answers
-        - feedback_incorrect: Message for incorrect answers
-        - question_type: 'text', 'yes_no', or 'choice'
-        - choices: For 'choice' type, options separated by |
-        - refer_to_trainer: 'yes' if trainer help needed for wrong answers
     """
     try:
-        df = pd.read_csv(QUESTIONS_FILE)
+        df = pd.read_csv(file_path)
         return df
     except FileNotFoundError:
-        st.error(f"Could not find {QUESTIONS_FILE}. Please make sure the file exists.")
+        st.error(f"Training content not found for this program/format. Please contact your trainer.")
         st.stop()
     except Exception as e:
         st.error(f"Error loading questions: {e}")
@@ -189,24 +189,29 @@ def save_progress():
     Save current progress to browser localStorage.
 
     This allows the user to close the browser and resume later.
-    We save:
-        - current_question_index: Which question they're on
-        - completed_questions: List of question_ids they've completed
-        - answers: Dictionary of their answers
+    Saves both routing state and training state.
     """
     progress = {
+        # Routing state
+        "phase": st.session_state.phase,
+        "routing_step": st.session_state.routing_step,
+        "routing_answers": st.session_state.routing_answers,
+        "training_csv_path": st.session_state.training_csv_path,
+        # Training state
         "current_question_index": st.session_state.current_question_index,
         "completed_questions": st.session_state.completed_questions,
-        "answers": st.session_state.answers
+        "answers": st.session_state.answers,
     }
 
     # Convert to JSON string and save to localStorage
     progress_json = json.dumps(progress)
+    # Escape single quotes to prevent JS string breakage
+    safe_json = progress_json.replace("'", "\\'")
 
     # This JavaScript code runs in the browser to save to localStorage
     streamlit_js_eval(
-        js_expressions=f"localStorage.setItem('{STORAGE_KEY}', '{progress_json}')",
-        key=f"save_progress_{st.session_state.current_question_index}"
+        js_expressions=f"localStorage.setItem('{STORAGE_KEY}', '{safe_json}')",
+        key=f"save_progress_{st.session_state.phase}_{st.session_state.routing_step}_{st.session_state.current_question_index}"
     )
 
 
@@ -242,7 +247,13 @@ def clear_progress():
         key="clear_progress"
     )
 
-    # Reset session state
+    # Reset routing state
+    st.session_state.phase = "routing"
+    st.session_state.routing_step = 0
+    st.session_state.routing_answers = {}
+    st.session_state.training_csv_path = None
+
+    # Reset training state
     st.session_state.current_question_index = 0
     st.session_state.completed_questions = []
     st.session_state.answers = {}
@@ -255,14 +266,21 @@ def initialize_session_state():
     Initialize all session state variables.
 
     Session state persists across Streamlit reruns (but NOT across browser closes).
-    We use it to track:
-        - current_question_index: Which question we're showing
-        - completed_questions: List of question IDs the user has answered correctly
-        - answers: Dictionary mapping question_id -> user's answer
-        - show_feedback: Whether to show the evaluation result
-        - last_result: The last evaluation result from OpenAI
-        - progress_loaded: Whether we've tried to load saved progress
     """
+    # Routing phase state
+    if "phase" not in st.session_state:
+        st.session_state.phase = "routing"
+
+    if "routing_step" not in st.session_state:
+        st.session_state.routing_step = 0
+
+    if "routing_answers" not in st.session_state:
+        st.session_state.routing_answers = {}
+
+    if "training_csv_path" not in st.session_state:
+        st.session_state.training_csv_path = None
+
+    # Training phase state
     if "current_question_index" not in st.session_state:
         st.session_state.current_question_index = 0
 
@@ -344,47 +362,217 @@ def render_question(question_row):
         return None
 
 
+def transition_to_training():
+    """Switch from routing phase to training phase based on selected program/format."""
+    program = st.session_state.routing_answers["program"]
+    fmt = st.session_state.routing_answers["format"]
+
+    csv_path = CSV_MAP.get((program, fmt))
+
+    if csv_path is None:
+        st.error(f"No training content found for {program} - {fmt}. Please contact your trainer.")
+        st.stop()
+
+    st.session_state.training_csv_path = str(csv_path)
+    st.session_state.phase = "training"
+
+    # Reset training-specific state
+    st.session_state.current_question_index = 0
+    st.session_state.completed_questions = []
+    st.session_state.answers = {}
+    st.session_state.show_feedback = False
+    st.session_state.last_result = None
+
+    save_progress()
+
+
 # =============================================================================
-# MAIN APPLICATION
+# ROUTING PHASE
 # =============================================================================
 
-def main():
+TOTAL_ROUTING_STEPS = 6
+
+
+def render_routing_phase():
     """
-    Main application function.
+    Render the routing phase UI.
 
-    This is the entry point that runs when the app starts.
-    It handles:
-        1. Initializing session state
-        2. Loading saved progress
-        3. Displaying the current question
-        4. Processing answers
-        5. Showing feedback
-        6. Navigation
+    Collects the missionary's area, program, format, and experience level
+    before starting training. No OpenAI calls - just collecting information.
+
+    Steps:
+        0: Welcome
+        1: Area assignment
+        2: Program (PathwayConnect / EnglishConnect)
+        3: Format (Virtual / In-Person)
+        4: Experience level
+        5: Confirmation + training preview
     """
+    st.title("New Missionary Orientation")
 
-    # Initialize session state variables
-    initialize_session_state()
+    # Progress for routing
+    step = st.session_state.routing_step
+    st.progress(step / TOTAL_ROUTING_STEPS)
+    st.caption(f"Setup: Step {step + 1} of {TOTAL_ROUTING_STEPS}")
+    st.divider()
 
-    # Load questions from CSV
-    questions_df = load_questions()
+    if step == 0:
+        # Welcome screen
+        st.markdown("### Welcome!")
+        st.markdown(
+            "Thank you for visiting! This training will help you prepare for your role "
+            "as a BYU-Pathway missionary. We'll start by collecting some information "
+            "about your assignment, then walk you through program-specific training."
+        )
+        if st.button("Get Started", type="primary"):
+            st.session_state.routing_step = 1
+            save_progress()
+            st.rerun()
+
+    elif step == 1:
+        # Area question
+        st.markdown("### What is your area assignment?")
+        st.markdown(
+            "What area will you be assigned to for your gathering? "
+            "Type \"I don't know\" if you are unsure."
+        )
+        area = st.text_input(
+            "Your area:",
+            key="routing_area",
+            placeholder="e.g., North America West"
+        )
+        if st.button("Continue", type="primary"):
+            if area.strip():
+                st.session_state.routing_answers["area"] = area.strip()
+                st.session_state.routing_step = 2
+                save_progress()
+                st.rerun()
+            else:
+                st.warning("Please enter your area or type \"I don't know\".")
+
+    elif step == 2:
+        # Program question
+        st.markdown("### What program will you be working with?")
+        program = st.radio(
+            "Select your program:",
+            ["PathwayConnect", "EnglishConnect"],
+            key="routing_program",
+            index=None
+        )
+        if st.button("Continue", type="primary"):
+            if program:
+                st.session_state.routing_answers["program"] = program
+                st.session_state.routing_step = 3
+                save_progress()
+                st.rerun()
+            else:
+                st.warning("Please select a program.")
+
+    elif step == 3:
+        # Format question
+        st.markdown("### What format will your gatherings be?")
+        format_choice = st.radio(
+            "Select your format:",
+            ["Virtual", "In-Person"],
+            key="routing_format",
+            index=None
+        )
+        if st.button("Continue", type="primary"):
+            if format_choice:
+                st.session_state.routing_answers["format"] = format_choice
+                st.session_state.routing_step = 4
+                save_progress()
+                st.rerun()
+            else:
+                st.warning("Please select a format.")
+
+    elif step == 4:
+        # Experience level
+        st.markdown("### What is your experience level?")
+        experience = st.radio(
+            "Select the option that best describes you:",
+            [
+                "First-time missionary",
+                "Former PathwayConnect student",
+                "Returning/experienced missionary",
+            ],
+            key="routing_experience",
+            index=None
+        )
+        if st.button("Continue", type="primary"):
+            if experience:
+                st.session_state.routing_answers["experience"] = experience
+                st.session_state.routing_step = 5
+                save_progress()
+                st.rerun()
+            else:
+                st.warning("Please select your experience level.")
+
+    elif step == 5:
+        # Confirmation + training preview
+        st.markdown("### Review Your Information")
+        st.markdown("Please confirm your details before starting training.")
+
+        area = st.session_state.routing_answers.get("area", "")
+        program = st.session_state.routing_answers.get("program", "")
+        fmt = st.session_state.routing_answers.get("format", "")
+        experience = st.session_state.routing_answers.get("experience", "")
+
+        st.markdown(f"- **Area:** {area}")
+        st.markdown(f"- **Program:** {program}")
+        st.markdown(f"- **Format:** {fmt}")
+        st.markdown(f"- **Experience:** {experience}")
+
+        st.divider()
+
+        # Training preview
+        st.markdown("### What to Expect")
+        st.markdown(
+            f"Your training is tailored for **{program} - {fmt}** missionaries. "
+            "You will be guided through a series of questions covering:"
+        )
+        st.markdown(
+            "- Accessing essential systems (My Gatherings portal)\n"
+            "- Contacting and connecting with your students\n"
+            "- Preparing for and conducting gatherings\n"
+            "- Tools and resources for your role"
+        )
+        st.markdown("Estimated time: **20-30 minutes**")
+
+        st.divider()
+
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("Edit Answers", use_container_width=True):
+                st.session_state.routing_step = 1
+                save_progress()
+                st.rerun()
+        with col2:
+            if st.button("Start Training", type="primary", use_container_width=True):
+                transition_to_training()
+                st.rerun()
+
+
+# =============================================================================
+# TRAINING PHASE
+# =============================================================================
+
+def render_training_phase():
+    """
+    Render the training phase UI.
+
+    Loads program-specific questions and walks the user through them,
+    evaluating answers with OpenAI.
+    """
+    # Load questions from the selected CSV
+    questions_df = load_questions(st.session_state.training_csv_path)
     total_questions = len(questions_df)
 
-    # Try to load saved progress (only once per session)
-    if not st.session_state.progress_loaded:
-        saved_progress = load_progress()
-        if saved_progress:
-            st.session_state.current_question_index = saved_progress.get("current_question_index", 0)
-            st.session_state.completed_questions = saved_progress.get("completed_questions", [])
-            st.session_state.answers = saved_progress.get("answers", {})
-            st.toast("Welcome back! Your progress has been restored.")
-        st.session_state.progress_loaded = True
-
-    # ==========================================================================
-    # HEADER
-    # ==========================================================================
-
+    # Header
     st.title("New Missionary Orientation")
-    st.markdown("Welcome to your training session. Answer each question to proceed.")
+    program = st.session_state.routing_answers.get("program", "")
+    fmt = st.session_state.routing_answers.get("format", "")
+    st.caption(f"Training: {program} - {fmt}")
 
     # Progress indicator
     completed_count = len(st.session_state.completed_questions)
@@ -395,41 +583,23 @@ def main():
 
     st.divider()
 
-    # ==========================================================================
-    # CHECK IF TRAINING IS COMPLETE
-    # ==========================================================================
-
+    # Check if training is complete
     if st.session_state.current_question_index >= total_questions:
-        st.success("Congratulations! You have completed the training.")
-        st.balloons()
-
-        st.markdown("### Summary")
-        st.write(f"You answered {completed_count} questions.")
-
-        if st.button("Start Over"):
-            clear_progress()
-            st.rerun()
-
+        st.session_state.phase = "complete"
+        save_progress()
+        st.rerun()
         return
 
-    # ==========================================================================
-    # DISPLAY CURRENT QUESTION
-    # ==========================================================================
-
+    # Display current question
     current_index = st.session_state.current_question_index
     current_question = questions_df.iloc[current_index]
 
-    # Question number and text
     st.markdown(f"### Question {current_index + 1} of {total_questions}")
     st.markdown(current_question["question"])
 
     st.divider()
 
-    # ==========================================================================
-    # RENDER INPUT AND HANDLE SUBMISSION
-    # ==========================================================================
-
-    # Only show input if we're not showing feedback
+    # Render input and handle submission
     if not st.session_state.show_feedback:
         user_answer = render_question(current_question)
 
@@ -449,10 +619,7 @@ def main():
             st.session_state.show_feedback = True
             st.rerun()
 
-    # ==========================================================================
-    # SHOW FEEDBACK
-    # ==========================================================================
-
+    # Show feedback
     if st.session_state.show_feedback and st.session_state.last_result:
         result = st.session_state.last_result
 
@@ -494,16 +661,43 @@ def main():
                 st.session_state.last_result = None
                 st.rerun()
 
-    # ==========================================================================
-    # SIDEBAR
-    # ==========================================================================
 
+# =============================================================================
+# COMPLETION SCREEN
+# =============================================================================
+
+def render_completion_screen():
+    """Render the training completion screen."""
+    st.title("New Missionary Orientation")
+
+    program = st.session_state.routing_answers.get("program", "")
+    fmt = st.session_state.routing_answers.get("format", "")
+    area = st.session_state.routing_answers.get("area", "")
+
+    st.success("Congratulations! You have completed the training.")
+    st.balloons()
+
+    st.markdown("### Summary")
+    st.write(f"**Area:** {area}")
+    st.write(f"**Program:** {program} - {fmt}")
+    st.write(f"**Questions completed:** {len(st.session_state.completed_questions)}")
+
+    if st.button("Start Over"):
+        clear_progress()
+        st.rerun()
+
+
+# =============================================================================
+# SIDEBAR
+# =============================================================================
+
+def render_sidebar():
+    """Render the sidebar with options and progress info."""
     with st.sidebar:
         st.markdown("### Options")
 
         if st.button("Start Over"):
-            if st.session_state.completed_questions:
-                # Show confirmation
+            if st.session_state.phase != "routing" or st.session_state.routing_step > 0:
                 st.warning("This will reset all your progress. Click again to confirm.")
                 if st.button("Yes, Reset Everything", type="secondary"):
                     clear_progress()
@@ -514,15 +708,66 @@ def main():
 
         st.divider()
 
-        st.markdown("### Your Progress")
-        for i, row in questions_df.iterrows():
-            q_id = row["question_id"]
-            if q_id in st.session_state.completed_questions:
-                st.markdown(f"- [x] {q_id}")
-            elif i == current_index:
-                st.markdown(f"- **{q_id}** (current)")
-            else:
-                st.markdown(f"- [ ] {q_id}")
+        # Show routing info if available
+        if st.session_state.routing_answers:
+            st.markdown("### Your Info")
+            for key, value in st.session_state.routing_answers.items():
+                st.write(f"**{key.title()}:** {value}")
+            st.divider()
+
+        # Show progress checklist during training
+        if st.session_state.phase == "training" and st.session_state.training_csv_path:
+            questions_df = load_questions(st.session_state.training_csv_path)
+            current_index = st.session_state.current_question_index
+
+            st.markdown("### Your Progress")
+            for i, row in questions_df.iterrows():
+                q_id = row["question_id"]
+                if q_id in st.session_state.completed_questions:
+                    st.markdown(f"- [x] {q_id}")
+                elif i == current_index:
+                    st.markdown(f"- **{q_id}** (current)")
+                else:
+                    st.markdown(f"- [ ] {q_id}")
+
+
+# =============================================================================
+# MAIN APPLICATION
+# =============================================================================
+
+def main():
+    """
+    Main application function.
+
+    Dispatches to the appropriate phase: routing, training, or complete.
+    """
+    # Initialize session state variables
+    initialize_session_state()
+
+    # Try to load saved progress (only once per session)
+    if not st.session_state.progress_loaded:
+        saved_progress = load_progress()
+        if saved_progress:
+            st.session_state.phase = saved_progress.get("phase", "routing")
+            st.session_state.routing_step = saved_progress.get("routing_step", 0)
+            st.session_state.routing_answers = saved_progress.get("routing_answers", {})
+            st.session_state.training_csv_path = saved_progress.get("training_csv_path", None)
+            st.session_state.current_question_index = saved_progress.get("current_question_index", 0)
+            st.session_state.completed_questions = saved_progress.get("completed_questions", [])
+            st.session_state.answers = saved_progress.get("answers", {})
+            st.toast("Welcome back! Your progress has been restored.")
+        st.session_state.progress_loaded = True
+
+    # Phase dispatcher
+    if st.session_state.phase == "routing":
+        render_routing_phase()
+    elif st.session_state.phase == "training":
+        render_training_phase()
+    elif st.session_state.phase == "complete":
+        render_completion_screen()
+
+    # Sidebar (always visible)
+    render_sidebar()
 
 
 # =============================================================================
