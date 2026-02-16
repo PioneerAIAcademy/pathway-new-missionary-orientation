@@ -1,0 +1,63 @@
+question_id,question,question_type,correct_answer,what_to_do,choices,content,next_yes,next_no,next_default,refer_on_no
+S1,"Have you ever been a PathwayConnect Student, or PathwayConnect Completer?",yes_no,Either Yes or No,"",,,S3,S2,,no
+S2,"What kind of students might benefit most from BYU-Pathway's educational structure?",text,"BYU-Pathway Worldwide is for students around the globe who want a flexible, affordable, faith-centered approach to higher education — especially those who might otherwise lack access to college-level learning or who need to balance schooling with life's other demands.
+
+Unemployed or underemployed individuals — BYU-Pathway can help members earn job-ready certificates and/or a degree to establish or transition into a career.
+
+Less active individuals and families — BYU-Pathway helps less active members reconnect to the gospel and make friends in their area by providing spiritual growth opportunities and fellowshipping.
+
+Young adults — BYU-Pathway's gospel-centered courses and institute requirements can be a source of strength and direction.
+
+Mothers with young families — BYU-Pathway's flexible homework options, and Gathering time offerings make it easier for a busy mom to be able to work around family schedules and complete her educational goals.
+
+Returned missionaries — BYU-Pathway can help returned missionaries continue to be involved in the gospel while getting an education and progressing toward a family and career.
+
+Recent Converts — Newly baptized members have opportunities to progress and fellowship, making it more likely that they'll stay active.
+
+Friends of the Church — Many individuals who are not members of the Church gain a testimony through BYU-Pathway's courses and eventually join the Church.
+
+Non-native English speakers — BYU-Pathway provides tools for improving English skills and professional communication.
+
+Those who can't travel to a campus — BYU-Pathway can be an excellent resource for those who want to start or complete a degree, but can't attend a Church-university campus either because of distance, job, family responsibilities, or cost.","Compare Missionary Answer with Correct Response and: reinforce concepts in the missionary's response that match the Correct Response; provide the concepts the missionary didn't have in their answer.",,,,,S3,no
+S3,"Do you have access to the My Gatherings App, and have you been able to login?",yes_no,Either Yes or No,"",,,S5,S4,,no
+S4,"We need to get you access to your student gathering list with contact information. Follow these instructions in a new browser window to log in. Come back to this window after you have tried logging in, successful or not.
+
+a. Find your log in email sent from missionary-pw@byupw.edu.
+b. Copy and paste the link from your email into your preferred browser. You will be directed to a registration page with your invitation code.
+c. Ignore the checkbox labelled I have an existing account.
+d. Click Register.
+e. Next, you will be redirected to the Church account sign in page. Enter your regular Church username and password to continue.
+f. You will be taken to the homepage of the My Gatherings portal.
+
+Were you able to log in to the My Gatherings portal?",yes_no,Either Yes or No,"",,,S5,S4,,yes
+S5,"Missionaries need to make an initial contact with each student as soon as the student appears in the missionary's gathering list. The two main purposes of the initial contact are to 1) Introduce yourself to the student, and 2) Schedule a New Student Visit with the student. To access your student list and locate student contact information, do the following:
+
+a. Log in to My Gatherings
+b. Click on Students in the top navigation
+c. Click in the box to the left of the gathering name
+d. Scroll down and click on Apply Filter
+e. Your list of students including their contact information will be displayed
+
+Were you able to get your student list and your students' contact information?",yes_no,Either Yes or No,"",,,S6,S5,,yes
+S6,"There are basically 3 preferred methods for making initial contact with a student:
+
+a. SMS Text - preferred in the U.S. and Canada
+b. WhatsApp - preferred in most International Countries
+c. Facebook Messenger - preferred by most people in the Pacific
+
+Select a method below to see a sample message:",choice,"","","SMS Text|WhatsApp|Facebook Messenger","{""SMS Text"":""Hi! This is Elder & Sister Smith from BYU-Pathway Worldwide. We see that you have enrolled in PathwayConnect and we want to welcome you to your education adventure. Would you please call or text us so we can schedule a time to visit with you, give you some information and answer questions you might have. Our phone number is 222-222-2222. Thank you. We look forward to talking with you soon."",""WhatsApp"":""Hi! This is Elder & Sister Smith from BYU-Pathway Worldwide. We see that you have enrolled in PathwayConnect and want to welcome you to your education adventure. Would you please call or send a chat to us so we can schedule a time to visit with you, give you some information and answer questions you might have. Our WhatsApp phone number is 2-222-222-2222. Thank you. We look forward to talking with you soon."",""Facebook Messenger"":""Hi! This is Elder & Sister Smith from BYU-Pathway Worldwide. We see that you have enrolled in PathwayConnect and want to welcome you to your education adventure. Would you please call or message us so we can schedule a time to visit with you, give you some information and answer questions you might have. Our phone number is 222-222-2222. Thank you. We look forward to talking with you soon.""}",,,S7,no
+S7,"When should a missionary start contacting their students?",text,"As soon as each student appears in the Gathering List.","Any answer that does not include 'as soon as the student appears in the Gathering list' should result in a response saying: 'The best time to contact a student is as soon after they appear in the Gathering list as possible.'",,,,,S8,no
+S8,"For the greatest chance to successfully contacting a student here is a suggested process:
+
+a. Text or message
+b. If you don't receive a response within a day or so, send a followup text or message
+c. If you don't receive a response within a day or so, followup with a phone call
+d. If no answer, leave a message
+e. If you don't receive a reply, send a followup email
+
+Would you like some tips?",yes_no,Either Yes or No,"For the greatest chance for success contacting a student do these things:
+First, Send a Text or message.
+Second, If no response within a couple of days, send a followup text or message.
+Third, If no response to second text/message, followup with a phone call. If no answer, leave a message.
+Fourth, Send an email.",,,S9,S9,,no
+S9,"Following are suggested items to discuss in a New Student Interview. Click on each item you would like to read more about:",expandable,,"","","[{""title"":""Explain Your Role"",""detail"":""Start by explaining your role as a missionary and the support you will provide to the student throughout their PathwayConnect experience.""},{""title"":""Get to Know the Student"",""detail"":""Ask about the student's family, church background, previous education, goals, and their reasons for registering for BYU-Pathway. This helps build rapport and understand their motivations.""},{""title"":""Discuss Future Aspirations"",""detail"":""Help the student envision who they can become and what skills they will acquire through the program.""},{""title"":""Religious Studies Participation"",""detail"":""Inform the student that BYU-Pathway is owned by the Church and that participation in religious studies and discussions is expected. If the student is of another faith, clarify that they are not required to join the Church but should maintain a respectful attitude towards its doctrines and beliefs.""},{""title"":""Gathering Information"",""detail"":""Provide details about the date, time, and location of their gathering, emphasizing the importance of attendance and how it will benefit them.""},{""title"":""Roles in Gatherings"",""detail"":""Explain the roles of lead and observing students, and how you will assist them in preparing for their gatherings using a gathering agenda.""},{""title"":""Virtual Connection"",""detail"":""If the student is in a virtual group, verify that they can connect to your Zoom room with audio and video, and emphasize the Virtual Gathering Guidelines.""},{""title"":""Encourage Scholarship Registration"",""detail"":""Encourage students to register for the Heber J. Grant Scholarship in their student portal, noting that every student qualifies.""},{""title"":""Religion Course Selection"",""detail"":""Ask which religion course the student selected during registration and explain the purpose and benefits of these classes, including that they will count as academic credit for the online degree program.""},{""title"":""Conclude with Prayer"",""detail"":""Offer to give a prayer to end the New Student Interview, explaining how prayer is part of the gathering and that students may pray in their own way or decline if they are uncomfortable.""}]",,,DONE,no
