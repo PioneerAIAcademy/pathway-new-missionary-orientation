@@ -231,3 +231,6 @@ output/
 
 # macOS
 .DS_Store
+
+# Deployment instructions (local only)
+DEPLOY.md
